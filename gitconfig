@@ -1,0 +1,48 @@
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  mt = mergetool
+  up = pull --rebase --prune
+  unpub = log --branches --not --remotes
+  df = diff
+  lg = log --graph --pretty=format:'%Cgreen%h%Creset -%Creset %s%C(yellow)%d %Cblue(%aN, %cr)%Creset' --abbrev-commit --date=relative
+  heir = log --all --graph --decorate --oneline --simplify-by-decoration
+  who = shortlog -s --
+  aliases = config --get-regexp alias
+  slog = log --pretty=oneline --graph --abbrev-commit
+  diffc = diff --cached
+  stashsome = stash --keep-index
+  conflicted = show --cc
+  mg = merge --no-ff
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+  blist = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+[code]
+  editor = code --wait
+[color]
+  ui = true
+[core]
+  autocrlf = true
+  editor = code --wait
+  excludesfile = ~/.gitignore
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool]
+  keepBackup = false
+  prompt = false
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[push]
+  default = simple
+[pull]
+  rebase = true
+[rebase]
+  autostash = true
+  autosquash = true
+[user]
+  name = Kristian Tryggestad

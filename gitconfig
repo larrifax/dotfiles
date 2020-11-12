@@ -26,6 +26,7 @@
   autocrlf = true
   editor = code --wait
   excludesfile = ~/.gitignore
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [diff]
   tool = vscode
 [difftool "vscode"]
@@ -37,6 +38,8 @@
   prompt = false
 [mergetool "vscode"]
   cmd = code --wait $MERGED
+[pager]
+  diff = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
 [push]
   default = simple
 [pull]

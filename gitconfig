@@ -14,6 +14,8 @@
   aliases = config --get-regexp alias
   slog = log --pretty=oneline --graph --abbrev-commit
   diffc = diff --cached
+  diffw = diff --word-diff=color
+  diffcw = diff --cached --word-diff=color
   stashsome = stash --keep-index
   conflicted = show --cc
   mg = merge --no-ff

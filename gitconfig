@@ -1,6 +1,8 @@
 [alias]
   st = status
   ci = commit
+  amend = commit --amend
+  fix = commit --amend --no-edit
   br = branch
   co = checkout
   mt = mergetool
@@ -21,6 +23,7 @@
   mg = merge --no-ff
   bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
   blist = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+  res = restore --staged
 [code]
   editor = code --wait
 [color]

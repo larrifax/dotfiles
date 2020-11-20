@@ -22,3 +22,7 @@
     ~/.local/bin/diff-so-fancy:
       create: true
       path: diff-so-fancy/diff-so-fancy
+    ~/.fzf: fzf
+
+- shell:
+  - [~/.fzf/install, Installing fzf]

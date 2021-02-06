@@ -26,6 +26,7 @@
   res = restore --staged
   addp = add -p 
   addup = !git add -N $1 && git add -p $1
+  po = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
 [code]
   editor = code --wait
 [color]

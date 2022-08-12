@@ -37,16 +37,13 @@
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
 [diff]
-  tool = vscode
-[difftool "vscode"]
+  tool = code
+[difftool "code"]
   cmd = code --wait --diff $LOCAL $REMOTE
 [merge]
-  tool = vscode
-[mergetool]
-  keepBackup = false
-  prompt = false
-[mergetool "vscode"]
-  cmd = code --wait $MERGED
+  tool = code
+[mergetool "code"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [pager]
   diff = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
 [push]

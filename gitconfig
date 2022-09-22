@@ -3,7 +3,7 @@
   addup = !git add -N $1 && git add -p $1
   aliases = config --get-regexp alias
   amend = commit --amend
-  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+  bclean = "!f() { git branch --merged ${1-$(git main-branch)} | grep -v " ${1-$(git main-branch)}$" | xargs -r git branch -d; }; f"
   blist = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
   br = branch
   ci = commit
@@ -17,9 +17,11 @@
   fpush = push --force-with-lease
   heir = log --all --graph --decorate --oneline --simplify-by-decoration
   lg = log --graph --pretty=format:'%Cgreen%h%Creset -%Creset %s%C(yellow)%d %Cblue(%aN, %cr)%Creset' --abbrev-commit --date=relative
+  main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
   mg = merge --no-ff
   mt = mergetool
   po = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  remotesh = remote set-head origin --auto
   res = restore --staged
   slog = log --pretty=oneline --graph --abbrev-commit
   st = status

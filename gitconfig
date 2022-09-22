@@ -1,32 +1,32 @@
 [alias]
-  st = status
-  ci = commit
-  amend = commit --amend
-  fix = commit --amend --no-edit
-  br = branch
-  co = checkout
-  mt = mergetool
-  up = pull --rebase --prune
-  fpush = push --force-with-lease
-  unpub = log --branches --not --remotes
-  df = diff
-  lg = log --graph --pretty=format:'%Cgreen%h%Creset -%Creset %s%C(yellow)%d %Cblue(%aN, %cr)%Creset' --abbrev-commit --date=relative
-  heir = log --all --graph --decorate --oneline --simplify-by-decoration
-  who = shortlog -s --
-  aliases = config --get-regexp alias
-  slog = log --pretty=oneline --graph --abbrev-commit
-  diffc = diff --cached
-  diffw = diff --word-diff=color
-  diffcw = diff --cached --word-diff=color
-  stashsome = stash --keep-index
-  conflicted = show --cc
-  mg = merge --no-ff
-  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
-  blist = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
-  res = restore --staged
   addp = add -p 
   addup = !git add -N $1 && git add -p $1
+  aliases = config --get-regexp alias
+  amend = commit --amend
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+  blist = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+  br = branch
+  ci = commit
+  co = checkout
+  conflicted = show --cc
+  df = diff
+  diffc = diff --cached
+  diffcw = diff --cached --word-diff=color
+  diffw = diff --word-diff=color
+  fix = commit --amend --no-edit
+  fpush = push --force-with-lease
+  heir = log --all --graph --decorate --oneline --simplify-by-decoration
+  lg = log --graph --pretty=format:'%Cgreen%h%Creset -%Creset %s%C(yellow)%d %Cblue(%aN, %cr)%Creset' --abbrev-commit --date=relative
+  mg = merge --no-ff
+  mt = mergetool
   po = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  res = restore --staged
+  slog = log --pretty=oneline --graph --abbrev-commit
+  st = status
+  stashsome = stash --keep-index
+  unpub = log --branches --not --remotes
+  up = pull --rebase --prune
+  who = shortlog -s --
 [code]
   editor = code --wait
 [color]

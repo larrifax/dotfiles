@@ -6,7 +6,7 @@
 	url = https://github.com/sorin-ionescu/prezto
 [submodule "diff-so-fancy"]
 	path = diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy.git
+	url = https://github.com/so-fancy/diff-so-fancy
 [submodule "fzf"]
 	path = fzf
-	url = https://github.com/junegunn/fzf.git
+	url = https://github.com/junegunn/fzf

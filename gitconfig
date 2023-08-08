@@ -40,6 +40,8 @@
   editor = code --wait
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
+[credential]
+  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [diff]
   tool = code
 [difftool "code"]

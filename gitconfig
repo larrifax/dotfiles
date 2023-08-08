@@ -31,6 +31,8 @@
   who = shortlog -s --
 [code]
   editor = code --wait
+[commit]
+	gpgsign = true
 [color]
   ui = true
 [core]
@@ -42,6 +44,10 @@
   tool = code
 [difftool "code"]
   cmd = code --wait --diff $LOCAL $REMOTE
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = /mnt/c/Users/krist/AppData/Local/1Password/app/8/op-ssh-sign.exe
 [merge]
   tool = code
 [mergetool "code"]

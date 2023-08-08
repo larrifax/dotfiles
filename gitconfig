@@ -63,3 +63,5 @@
   autosquash = true
 [user]
   name = Kristian Tryggestad
+  email = kristian.tryggestad@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEzI9P+xHpKe/r/e2rVXEx5M2064iu+fJJp4idihZjC8

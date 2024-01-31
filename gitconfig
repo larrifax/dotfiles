@@ -3,6 +3,7 @@
   addup = !git add -N $1 && git add -p $1
   aliases = config --get-regexp alias
   amend = commit --amend
+  bcleangone = "!f() { git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d; }; f"
   bclean = "!f() { git branch --merged ${1-$(git main-branch)} | grep -v " ${1-$(git main-branch)}$" | xargs -r git branch -d; }; f"
   blist = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
   br = branch

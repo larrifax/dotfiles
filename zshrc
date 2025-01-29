@@ -1,3 +1,10 @@
+# fnm
+FNM_PATH="/home/larrifax/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/larrifax/.local/share/fnm:$PATH"
+  eval "`fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines`"
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -24,8 +31,8 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/.dotnet/tools"

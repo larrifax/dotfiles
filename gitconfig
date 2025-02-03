@@ -39,24 +39,16 @@
 [core]
   autocrlf = input
   editor = code --wait
-  excludesfile = ~/.gitignore
-  pager = diff-so-fancy | less --tabs=4 -RFX
-[credential]
-  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [diff]
   tool = code
 [difftool "code"]
   cmd = code --wait --diff $LOCAL $REMOTE
 [gpg]
   format = ssh
-[gpg "ssh"]
-  program = /mnt/c/Users/krist/AppData/Local/1Password/app/8/op-ssh-sign.exe
 [merge]
   tool = code
 [mergetool "code"]
   cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
-[pager]
-  diff = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
 [push]
   default = simple
 [pull]
@@ -68,3 +60,8 @@
   name = Kristian Tryggestad
   email = kristian.tryggestad@gmail.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEzI9P+xHpKe/r/e2rVXEx5M2064iu+fJJp4idihZjC8
+
+[includeIf "gitdir/i:C:/"]
+    path = ./gitconfig-windows
+[includeIf "gitdir:/home/"]
+    path = ~/.gitconfig-linux

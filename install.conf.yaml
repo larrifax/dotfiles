@@ -19,6 +19,7 @@
     ~/.zpreztorc:
     ~/.p10k.zsh:
     ~/.gitconfig:
+    ~/.gitconfig-linux:
     ~/.local/bin/diff-so-fancy:
       create: true
       path: diff-so-fancy/diff-so-fancy

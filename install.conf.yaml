@@ -20,6 +20,7 @@
     ~/.p10k.zsh:
     ~/.gitconfig:
     ~/.gitconfig-linux:
+    ~/.gitconfig-mac:
     ~/.local/bin/diff-so-fancy:
       create: true
       path: diff-so-fancy/diff-so-fancy

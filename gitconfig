@@ -64,3 +64,5 @@
     path = ./gitconfig-windows
 [includeIf "gitdir:/home/"]
     path = ~/.gitconfig-linux
+[includeIf "gitdir:/Users/"]
+    path = ~/.gitconfig-mac

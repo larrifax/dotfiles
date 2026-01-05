@@ -4,6 +4,16 @@
 #
 # Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
 
+path+=($HOME/.local/bin)
+path+=($HOME/.dotnet/tools)
+
+# fnm
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  path+=($FNM_PATH)
+  eval "`fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines`"
+fi
+
 # Periodic auto-update on Zsh startup: 'ask' or 'no'.
 # You can manually run `z4h update` to update everything.
 zstyle ':z4h:' auto-update      'ask'

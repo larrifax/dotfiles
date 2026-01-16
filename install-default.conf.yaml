@@ -2,21 +2,23 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - shell:
-    - [chsh -s $(which zsh), Making zsh the default shell]
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.zshenv:
-      force: true
-    ~/.zshrc:
-      force: true
-    ~/.p10k.zsh:
+    ~/.dotfiles:
+      path: ""
+      relink: true
     ~/.gitconfig:
     ~/.gitconfig-linux:
     ~/.gitconfig-mac:
     ~/.local/bin/diff-so-fancy:
       create: true
       path: diff-so-fancy/diff-so-fancy
+    ~/.p10k.zsh:
+    ~/.zshenv:
+      force: true
+    ~/.zshrc:
+      force: true

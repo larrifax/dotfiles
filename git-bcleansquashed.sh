@@ -22,6 +22,14 @@ git checkout -q $TARGET && git for-each-ref refs/heads/ "--format=%(refname:shor
         mergeBase=$(git merge-base $TARGET "$branch")
 
         if [[ $(git cherry $TARGET $(git commit-tree -p "$mergeBase" -m _ $(git rev-parse "$branch^{tree}"))) == "-"* ]]; then
+            worktree=$(git worktree list --porcelain |
+                awk -v b="refs/heads/$branch" '
+                    /^worktree / { path = substr($0, 10) }
+                    $0 == "branch " b { print path; exit }')
+            if [[ -n $worktree ]]; then
+                [[ $VERBOSE -eq 1 ]] && echo "Removing worktree $worktree for $branch ..."
+                git worktree remove "$worktree" || continue
+            fi
             git branch -D "$branch"
         fi
     done

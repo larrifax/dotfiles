@@ -1,4 +1,4 @@
 [gpg "ssh"]
-  program = C:/Users/krist/AppData/Local/1Password/app/8/op-ssh-sign.exe
+  program = op-ssh-sign.exe
 [alias]
   bcleansquashed = !powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/dev/dotfiles/git-bcleansquashed.ps1

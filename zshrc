@@ -11,7 +11,7 @@ path+=($HOME/.dotnet/tools)
 FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   path+=($FNM_PATH)
-  eval "`fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines`"
+  eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines)"
 fi
 
 # Periodic auto-update on Zsh startup: 'ask' or 'no'.

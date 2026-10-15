@@ -36,6 +36,7 @@
   unpub = log --branches --not --remotes
   up = pull --rebase --prune
   who = shortlog -s --
+  wt-rm = "!f() { git worktree remove \"$(git worktree list --porcelain | awk -v b=\"refs/heads/$1\" '/^worktree /{p=substr($0,10)} $0==\"branch \"b{print p}')\"; }; f"
 [code]
   editor = code --wait
 [commit]

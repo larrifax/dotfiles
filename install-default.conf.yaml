@@ -6,8 +6,6 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - command: '[ -d ~/.fleet ] && git -C ~/.fleet pull --ff-only -q || git clone -q https://github.com/larrifax/fleet.git ~/.fleet'
-      description: Syncing fleet
 
 - link:
     ~/.dotfiles:
@@ -24,15 +22,8 @@
       force: true
     ~/.zshrc:
       force: true
-    ~/.claude/settings.json:
-      backup: true
-      create: true
-      path: ~/.fleet/claude/settings.json
-    ~/.claude/CLAUDE.md:
-      backup: true
-      create: true
-      path: ~/.fleet/claude/CLAUDE.md
-    ~/.claude/skills/:
-      glob: true
-      create: true
-      path: ~/.fleet/claude/skills/*
+
+# fleet holds shared Claude config and installs itself; cloned (not a submodule) so every install gets latest main
+- shell:
+    - command: '{ [ -d ~/.fleet ] && git -C ~/.fleet pull --ff-only -q || git clone -q https://github.com/larrifax/fleet.git ~/.fleet; } && ~/.fleet/install'
+      description: Installing fleet

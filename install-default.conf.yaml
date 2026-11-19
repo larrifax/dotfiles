@@ -14,6 +14,9 @@
     ~/.gitconfig:
     ~/.gitconfig-linux:
     ~/.gitconfig-mac:
+    # Windows binaries (1Password signer, credential manager) only run on WSL, not in devcontainers
+    ~/.gitconfig-wsl:
+      if: '[ -e /proc/sys/fs/binfmt_misc/WSLInterop ]'
     ~/.local/bin/diff-so-fancy:
       create: true
       path: diff-so-fancy/diff-so-fancy

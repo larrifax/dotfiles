@@ -2,9 +2,9 @@
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
 [credential]
-  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
   format = ssh
-[gpg "ssh"]
-  program = op-ssh-sign.exe
 [pager]
   diff = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
+# WSL-only settings; the file is only linked on WSL and git skips missing includes
+[include]
+  path = ~/.gitconfig-wsl
